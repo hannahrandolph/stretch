@@ -14,4 +14,4 @@ print "Last but not least, tell me a noun! "
 noun = gets.chomp
 
 puts "Thank you for your cooperation, now its time to see what story we tell!"
-puts "#{name}, the newest stretchee, is based in the #{place} office and enjoys #{verb} on the weekends. On their first day an  #{adj} coworker introduced them to #{noun}  and as a result no work has been done in days!"
+puts "#{name}, the newest stretchee, is based in the #{place} office and enjoys #{verb} on the weekends. On their first day a  #{adj} coworker introduced them to #{noun}  and as a result no work has been done in days!"
