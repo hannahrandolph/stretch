@@ -9,9 +9,7 @@ $LOAD_PATH.unshift(
     )
   )
 
-=begin
-require 'cli'
-CLI.start
 
-not sure where to get the CLI constant
-=end
+require 'game'
+Game.start
+
