@@ -5,6 +5,7 @@ class Gigapet
     attr_reader :cuddle
     attr_writer :choice
 
+
     def initialize(feed=5, walk=0, fun=5, cuddle=5)
       @@feed = feed
       @@walk = walk
