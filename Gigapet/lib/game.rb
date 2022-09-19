@@ -3,15 +3,17 @@ class Game
     
     attr_reader :dragon
     
-    def initialize
+    public def initialize
         @dragon = Dragon.new
-        # @choice = choice
     end
 
     def start
         welcome
-        status
-        choose
+        #loop do
+            status
+            choose
+            #break if choice == "quit"
+        #end
     end
 
     def welcome
@@ -37,9 +39,10 @@ class Game
 
     def choose
         puts "\n"
-        print "Choose an action to take care of me: Feed, walk, cuddle or play!  " #fix the wording of this
+        print "Choose an action to take care of me: Feed, walk, cuddle or play! (Quit to exit)  " #fix the wording of this
         choice = gets.chomp
         puts "You chose #{choice}"
+        puts "\n"
 
         case choice
         when "feed"
@@ -74,10 +77,13 @@ class Game
             else
               puts "Yippee! Let's cuddle!"
             end
+        when "quit"
+            puts "See ya later!! :) "
         else
             puts "I didn't quite understand that!"
         
-        end    
+        end 
+        puts "\n\n"  
     end
  
 end
