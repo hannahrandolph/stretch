@@ -9,11 +9,11 @@ class Game
 
     def start
         welcome
-        #loop do
-            status
-            choose
-            #break if choice == "quit"
-        #end
+        status
+        loop do 
+         choose
+         break if @choice == "quit"
+        end
     end
 
     def welcome
@@ -40,11 +40,11 @@ class Game
     def choose
         puts "\n"
         print "Choose an action to take care of me: Feed, walk, cuddle or play! (Quit to exit)  " #fix the wording of this
-        choice = gets.chomp
-        puts "You chose #{choice}"
+        @choice = gets.chomp
+        puts "You chose #{@choice}"
         puts "\n"
 
-        case choice
+        case @choice
         when "feed"
             if dragon.hunger<=5
                 dragon.hunger = dragon.hunger += 1
@@ -78,13 +78,15 @@ class Game
               puts "Yippee! Let's cuddle!"
             end
         when "quit"
+
             puts "See ya later!! :) "
+            exit
         else
             puts "I didn't quite understand that!"
         
         end 
-        puts "\n\n"  
+        puts status
     end
- 
 end
+
 Game.new.start
