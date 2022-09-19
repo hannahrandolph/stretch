@@ -4,12 +4,13 @@
  
 $LOAD_PATH.unshift(
     File.expand_path(
-      '../lib',
+      '../../lib',
       __FILE__
     )
   )
 
 
-require 'game'
-Game.start
+require 'game.rb'
+Game.initialize
+# Game.start - undefined method `start' for Game:Class (NoMethodError)
 
