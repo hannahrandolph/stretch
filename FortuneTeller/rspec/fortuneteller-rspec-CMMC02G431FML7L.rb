@@ -1,3 +1,5 @@
+require 'rspec/autorun'
+
 class FortuneTeller
     attr_reader :fortunes
      
@@ -11,6 +13,7 @@ class FortuneTeller
         color
         money
         fortune
+   
     end
 
     def welcome
@@ -20,12 +23,7 @@ class FortuneTeller
     def name
         print "First things first, I'll need you to remind me of your name...  "
         @name = gets.chomp.capitalize!
-        if @name == "Quit"
-            puts "See ya later!"
-            exit
-        else
         puts "Ah yes, thank you for the reminder! \n\n"
-        end
     end
 
     # Age input - checks that input is integer - adds random number between 1-75 to age to find when user will die
@@ -78,4 +76,17 @@ class FortuneTeller
         puts "#{@name}, you will die at the ripe age of #{@age_out} leaving behind #{@children} children with $#{@money_left},000 in the bank."
     end
 
+end
+
+describe FortuneTeller do
+    let(:fortuneteller) {FortuneTeller.new}
+
+        it "returns foo as input" do
+            allow($stdin).to receive(:gets).and_return('foo')
+            name = $stdin.gets
+            expect(name).to eq('foo')
+        end
+
+        
+    
 end
